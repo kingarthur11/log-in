@@ -1,0 +1,52 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/product.css">
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+
+            <main>
+            
+                    <div class="grid">
+                        <% for (let patient of prods) { %>
+                            <article class="card product-item">
+                                <header class="card__header">
+                                    <h1 class="product__first-name">
+                                        <%= patient.firstName %>
+                                    </h1>
+                                </header>
+                                <header class="card__header">
+                                    <h1 class="product__Last-name">
+                                        <%= patient.lastName %>
+                                    </h1>
+                                </header>
+                                
+                                <div class="card__content">
+                                    <h2 class="product__phone-number">$
+                                        <%= patient.phoneNumber %>
+                                    </h2>
+                                    <h2 class="product__marital-status">$
+                                        <%= patient.maritalStatus %>
+                                    </h2>
+                                    <h2 class="product__occupation">$
+                                        <%= patient.occupation %>
+                                    </h2>
+                                    <h2 class="product__nationality">$
+                                        <%= patient.nationality %>
+                                    </h2>
+                                    <h2 class="product__address">$
+                                        <%= patient.address %>
+                                    </h2>
+                                    <h2 class="product__email">$
+                                        <%= patient.email %>
+                                    </h2>
+                                </div>
+                               
+                            </article>
+                            <% } %>
+                    </div>
+                  
+            </main>
+            <%- include('../includes/end.ejs') %>
+         
+       

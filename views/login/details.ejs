@@ -1,0 +1,43 @@
+<%- include('../includes/head.ejs') %>
+
+    <link rel="stylesheet" href="/css/product.css">
+</head>
+<body>
+    <%- include('../includes/navigation.ejs') %>
+    <main>
+
+        <h2>the password and email </h2>
+        <table class="tab">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>email</th>
+                    <th>password</th>
+                    <th>action</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <% for (let leave of pages) { %>
+                <tr>
+                    <td> <%= leave.IdPage %> </td>
+                     <td> <%= leave.emailPage %> </td> 
+                     <td> <%= leave.password %> </td>  
+                     <td>
+                        <a href="/login" class="btn btn-sm btn-danger">ADD</a>
+                        <a href="/delete/<%= leave.IdPage %>" class="btn btn-sm btn-danger">DELETE</a>
+                        <a href="/select/<%= leave.IdPage %>" class="btn btn-sm btn-danger">SELECT</a>
+                     </td>
+                </tr> 
+                
+                <% } %>           
+                              
+                      
+            </tbody>
+        </table>
+        </div>
+
+    </main>
+    
+    <%- include('../includes/end.ejs') %>    
+    
